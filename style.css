@@ -17,6 +17,40 @@ canvas {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.controls__btns {
+  display: flex;
+}
+
+.controls .controls__range {
+  margin-bottom: 1.5rem;
+}
+
+.controls__btns button {
+  all: unset;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px 0px;
+  width: 80px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.controls__btns button :active {
+  transform: scale(0.98);
+}
+
 .colorBox {
   display: flex;
   margin-top: 1.5rem;
