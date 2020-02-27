@@ -47,7 +47,7 @@ canvas {
   font-size: 12px;
   text-transform: uppercase;
 }
-.controls__btns button :active {
+.controls__btns button:active {
   transform: scale(0.98);
 }
 
