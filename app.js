@@ -1,4 +1,6 @@
 const canvas = document.getElementById("jsCanvas");
+const colorBox = document.querySelectorAll("#jsColorBox div");
+const range = document.getElementById("jsRange");
 const ctx = canvas.getContext("2d");
 
 let paint = false;
@@ -40,4 +42,12 @@ if (canvas) {
   canvas.addEventListener("mousedown", mouseDown);
   canvas.addEventListener("mouseleave", mouseLeave);
   canvas.addEventListener("mouseup", mouseUp);
+  colorBox.forEach(ele => {
+    ele.addEventListener("click", () => {
+      ctx.strokeStyle = ele.style.backgroundColor;
+    });
+  });
+  range.addEventListener("change", () => {
+    ctx.lineWidth = range.value;
+  });
 }
