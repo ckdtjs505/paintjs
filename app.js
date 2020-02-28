@@ -6,12 +6,12 @@ const saveButton = document.getElementById("jsSave");
 const ctx = canvas.getContext("2d");
 
 let paint = false;
-
+let color = "#2c2c2c";
 // 이게 무슨 읐인지 모르겠다
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 
-ctx.strokeStyle = "#2c2c2c";
+ctx.strokeStyle = color;
 ctx.lineWidth = 2.5;
 
 function mouseOver(event) {
@@ -40,7 +40,7 @@ function mouseLeave() {
 }
 
 function handleModeBtnClick() {
-  alert("mode Button Click");
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function handleSaveBtnClick() {
@@ -59,7 +59,9 @@ if (canvas) {
 
   colorBox.forEach(ele => {
     ele.addEventListener("click", () => {
-      ctx.strokeStyle = ele.style.backgroundColor;
+      color = ele.style.backgroundColor;
+      ctx.strokeStyle = color;
+      ctx.fillStyle = color;
     });
   });
 
