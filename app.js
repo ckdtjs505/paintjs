@@ -1,6 +1,8 @@
 const canvas = document.getElementById("jsCanvas");
 const colorBox = document.querySelectorAll("#jsColorBox div");
 const range = document.getElementById("jsRange");
+const modeButton = document.getElementById("jsMode");
+const saveButton = document.getElementById("jsSave");
 const ctx = canvas.getContext("2d");
 
 let paint = false;
@@ -25,16 +27,28 @@ function mouseOver(event) {
   }
 }
 
-function mouseDown(event) {
+function mouseDown() {
   paint = true;
 }
 
-function mouseUp(event) {
+function mouseUp() {
   paint = false;
 }
 
-function mouseLeave(event) {
+function mouseLeave() {
   paint = false;
+}
+
+function handleModeBtnClick() {
+  alert("mode Button Click");
+}
+
+function handleSaveBtnClick() {
+  let imgUrl = canvas.toDataURL("image/jpg");
+  var imgDownTag = document.createElement("a");
+  imgDownTag.download = "canvas.jpg";
+  imgDownTag.href = imgUrl;
+  imgDownTag.click();
 }
 
 if (canvas) {
@@ -42,12 +56,17 @@ if (canvas) {
   canvas.addEventListener("mousedown", mouseDown);
   canvas.addEventListener("mouseleave", mouseLeave);
   canvas.addEventListener("mouseup", mouseUp);
+
   colorBox.forEach(ele => {
     ele.addEventListener("click", () => {
       ctx.strokeStyle = ele.style.backgroundColor;
     });
   });
+
   range.addEventListener("change", () => {
     ctx.lineWidth = range.value;
   });
+
+  modeButton.addEventListener("click", handleModeBtnClick);
+  saveButton.addEventListener("click", handleSaveBtnClick);
 }

@@ -24,10 +24,6 @@ canvas {
   margin-top: 2rem;
 }
 
-.controls__btns {
-  display: flex;
-}
-
 .controls .controls__range {
   margin-bottom: 1.5rem;
 }
@@ -48,7 +44,7 @@ canvas {
   text-transform: uppercase;
 }
 .controls__btns button:active {
-  transform: scale(0.98);
+  transform: scale(0.9);
 }
 
 .colorBox {
