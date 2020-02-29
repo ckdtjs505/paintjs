@@ -12,6 +12,7 @@ canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 
 ctx.strokeStyle = color;
+ctx.fillStyle = color;
 ctx.lineWidth = 2.5;
 
 function mouseOver(event) {
